@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GL Imports | Premium Store</title>
+    
+    <!-- SEO & Link Preview Meta Tags -->
+    <meta name="description" content="GL Imports - Sua loja premium de iPhones, acessórios JBL e moda exclusiva. Qualidade e sofisticação." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="GL Imports - Premium Store" />
+    <meta property="og:description" content="iPhones, JBL e Moda Premium. O melhor da tecnologia e estilo em um só lugar." />
+    <meta property="og:image" content="https://i.imgur.com/URVm5iR.jpeg" />
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://i.imgur.com/URVm5iR.jpeg" type="image/jpeg" />
+    <link rel="apple-touch-icon" href="https://i.imgur.com/URVm5iR.jpeg" />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Montserrat (Premium Geometric Sans) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <style>
+      :root {
+        --gold-primary: #D4AF37;
+        --gold-light: #FEDC56;
+        --gold-dark: #AA771C;
+      }
+
+      body {
+        background-color: #050505;
+        background-image: 
+          radial-gradient(circle at 50% 0%, #1a1a1a 0%, #050505 70%),
+          url('https://www.transparenttextures.com/patterns/cubes.png'); /* Subtle texture */
+        background-size: cover, auto;
+        background-attachment: fixed;
+        font-family: 'Montserrat', sans-serif;
+        color: #f0f0f0;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+      
+      .font-display {
+        font-family: 'Montserrat', sans-serif;
+      }
+
+      /* Gold Gradient Text */
+      .text-gold-gradient {
+        background: linear-gradient(to bottom, #FCF6BA, #BF953F, #B38728, #FBF5B7, #AA771C);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+        background-size: 200% auto;
+        animation: shine-text 5s linear infinite;
+      }
+
+      @keyframes shine-text {
+        to {
+          background-position: 200% center;
+        }
+      }
+
+      /* Glassmorphism Card */
+      .luxury-glass {
+        background: rgba(20, 20, 20, 0.75);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(212, 175, 55, 0.2);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      }
+
+      /* Custom Focus */
+      .custom-focus-ring {
+        outline: none;
+        transition: all 0.3s ease;
+      }
+      .custom-focus-ring:focus-visible {
+        box-shadow: 0 0 0 2px #050505, 0 0 0 4px #D4AF37;
+      }
+
+      /* Divider */
+      .gold-divider {
+        height: 1px;
+        border: none;
+        background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+        opacity: 0.5;
+      }
+
+      /* Animations */
+      @keyframes page-load-fade-in {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-page-load {
+        animation: page-load-fade-in 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        opacity: 0;
+      }
+
+      @keyframes modal-fade-in-up {
+        from { opacity: 0; transform: translateY(30px) scale(0.95); }
+        to { opacity: 1; transform: translateY(0) scale(1); }
+      }
+      .animate-modal-in {
+        animation: modal-fade-in-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      }
+
+      /* Loading Screen Animations */
+      @keyframes pulse-gold {
+        0%, 100% { opacity: 1; transform: scale(1); filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.5)); }
+        50% { opacity: 0.8; transform: scale(0.98); filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.8)); }
+      }
+      .animate-pulse-gold {
+        animation: pulse-gold 2s infinite;
+      }
+
+      .fade-exit {
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 1s ease-in-out;
+      }
+
+      /* Logo Glow */
+      @keyframes gold-pulse {
+        0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4); }
+        70% { box-shadow: 0 0 0 10px rgba(212, 175, 55, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+      }
+      .logo-container {
+        position: relative;
+        border-radius: 1rem; 
+        padding: 2px;
+        background: linear-gradient(45deg, #AA771C, #FCF6BA, #AA771C);
+        animation: gold-pulse 3s infinite;
+      }
+      .logo-container img {
+        border-radius: calc(1rem - 2px);
+        display: block;
+      }
+
+      /* 
+         Filter Black to Gold 
+         Invert: Black becomes White
+         Sepia: White becomes Sepia
+         Saturate: Boosts color
+      */
+      .filter-black-to-gold {
+        filter: invert(100%) sepia(100%) saturate(400%) hue-rotate(0deg) brightness(100%) contrast(100%);
+        transition: all 0.5s ease;
+      }
+
+      /* Shine Effect on Button */
+      .shine-gold {
+        position: relative;
+        overflow: hidden;
+      }
+      .shine-gold::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+        transition: none;
+      }
+      .shine-gold:hover::after {
+        left: 100%;
+        transition: 0.7s ease-in-out;
+      }
+
+      /* Watermark */
+      .watermark-hypertech {
+        position: fixed;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0.4;
+        font-size: 10px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #888;
+        z-index: 40;
+        transition: opacity 0.3s ease;
+      }
+      .watermark-hypertech:hover {
+        opacity: 0.8;
+        color: #D4AF37;
+      }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+    
+    <!-- Watermark -->
+    <div class="watermark-hypertech">
+      <a href="https://www.hyper-tech.online/" target="_blank" rel="noopener noreferrer">Designed by Hyper Tech</a>
+    </div>
+    
+    <!-- React Libraries -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <!-- Babel for JSX Transpilation -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+      const { useState, useCallback, useEffect } = React;
+
+      // --- SVG Icons ---
+      const WhatsAppIcon = ({ className }) => (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={className}>
+          <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.639-.692c.84.455 1.789.74 2.811.741 3.181 0 5.768-2.587 5.768-5.766 0-1.541-.6-2.99-1.689-4.079-1.089-1.09-2.538-1.689-4.079-1.689zm8.608 5.766c-.001 1.9-.618 3.673-1.695 5.144l.726 2.543-2.675-.857c-1.31.541-2.774.845-4.316.845-6.218 0-11.277-5.057-11.277-11.273 0-3.011 1.173-5.844 3.303-7.975 2.13-2.131 4.963-3.304 7.974-3.304 6.219 0 11.279 5.056 11.279 11.273zm-1.936 4.255l.229.339c1.082 1.605 1.656 3.479 1.656 5.414 0 5.269-4.287 9.556-9.557 9.556-2.696 0-5.162-1.118-6.929-2.946-1.766-1.828-2.739-4.335-2.739-6.61 0-5.268 4.288-9.555 9.557-9.555 1.731 0 3.362.459 4.836 1.289l.311.176 3.45-1.013z" fillRule="evenodd" clipRule="evenodd"/>
+        </svg>
+      );
+
+      const DiamondIcon = ({ className }) => (
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={className}>
+              <path d="M6 3h12l4 6-10 13L2 9z"></path>
+              <path d="M11 3L8 9l4 13 4-13-3-6"></path>
+              <path d="M2 9h20"></path>
+          </svg>
+      );
+
+      const MapPinIcon = ({ className }) => (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={className}>
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+          <circle cx="12" cy="10" r="3"></circle>
+        </svg>
+      );
+
+      const CloseIcon = ({ className }) => (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      );
+
+      const InstagramIcon = ({ className }) => (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={className}>
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+      );
+
+      // --- Loading Screen Component ---
+      const LoadingScreen = ({ onFinish }) => {
+        const [stage, setStage] = useState(0);
+        const [isFadingOut, setIsFadingOut] = useState(false);
+
+        const brands = [
+          { 
+            id: 'apple', 
+            label: 'APPLE', 
+            src: 'https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg',
+            customClass: 'filter-black-to-gold',
+            showText: true
+          },
+          { 
+            id: 'jbl', 
+            label: 'JBL', 
+            src: 'https://i.imgur.com/dPCm9Ue.png',
+            customClass: 'filter-black-to-gold',
+            showText: false 
+          },
+          { 
+            id: 'lacoste', 
+            label: 'LACOSTE', 
+            src: 'https://i.imgur.com/qQWsf2S.png',
+            customClass: 'filter-black-to-gold',
+            showText: false
+          }
+        ];
+
+        useEffect(() => {
+          // Sequence logic
+          // 0 -> 1 (1500ms)
+          // 1 -> 2 (1500ms)
+          // 2 -> End (1500ms)
+          
+          const interval = setInterval(() => {
+            setStage(prev => {
+              if (prev < brands.length - 1) return prev + 1;
+              
+              // If at last brand, initiate finish sequence
+              clearInterval(interval);
+              setTimeout(() => {
+                 setIsFadingOut(true);
+                 setTimeout(onFinish, 800); // wait for fade out animation
+              }, 1200);
+              return prev;
+            });
+          }, 1500);
+
+          return () => clearInterval(interval);
+        }, [onFinish]);
+
+        return (
+          <div className={`fixed inset-0 z-50 bg-[#050505] flex flex-col items-center justify-center transition-opacity duration-1000 ${isFadingOut ? 'opacity-0' : 'opacity-100'}`}>
+            <div className="flex flex-col items-center animate-page-load">
+               <div key={stage} className="flex flex-col items-center justify-center h-48 w-48 animate-pulse-gold transition-all duration-500">
+                  {/* Image with Gold Filter */}
+                  <img 
+                    src={brands[stage].src} 
+                    alt={brands[stage].label}
+                    className={`h-24 w-auto object-contain ${brands[stage].customClass}`}
+                  />
+                  {brands[stage].showText && (
+                      <h2 className="mt-6 font-display text-2xl tracking-[0.4em] text-gold-gradient font-bold uppercase">
+                        {brands[stage].label}
+                      </h2>
+                  )}
+               </div>
+               
+               <div className="mt-12 w-32 h-0.5 bg-gray-900 rounded-full overflow-hidden">
+                  <div 
+                    className="h-full bg-[#D4AF37] transition-all duration-500 ease-out shadow-[0_0_10px_#D4AF37]"
+                    style={{ width: `${((stage + 1) / brands.length) * 100}%` }}
+                  ></div>
+               </div>
+            </div>
+          </div>
+        );
+      };
+
+      // --- Links Data ---
+      const mainLinks = [
+        {
+          id: 'whatsapp',
+          text: 'Atendimento via Whatsapp',
+          subtext: 'Fale diretamente com nossa equipe',
+          url: 'https://wa.me/5582982034411',
+          icon: <WhatsAppIcon />,
+          primary: true,
+        },
+        {
+          id: 'about',
+          text: 'Nossa História',
+          subtext: 'Conheça o legado GL Imports',
+          icon: <DiamondIcon />,
+        },
+        {
+          id: 'location',
+          text: 'Nossa Localização',
+          subtext: 'Visite nossa loja',
+          url: 'https://maps.app.goo.gl/2p5nXKmpCpZxAxbf7',
+          icon: <MapPinIcon />,
+        },
+      ];
+
+      // --- LinkButton Component ---
+      const LinkButton = ({ text, subtext, url, icon, primary = false, onClick }) => {
+        // Base Luxury Styles
+        const baseClasses = "group relative w-full flex items-center justify-between px-6 py-5 rounded-sm transition-all duration-500 ease-out transform custom-focus-ring overflow-hidden font-display border-l-2";
+        
+        // Primary (Solid Gold)
+        const primaryClasses = "bg-gradient-to-r from-[#BF953F] via-[#FCF6BA] to-[#B38728] text-black shadow-[0_0_25px_rgba(212,175,55,0.25)] hover:shadow-[0_0_35px_rgba(212,175,55,0.5)] border-[#fff]";
+        
+        // Secondary (Glass/Dark)
+        const secondaryClasses = "bg-black/40 border-l-[#D4AF37] border-y border-r border-y-transparent border-r-transparent text-[#D4AF37] hover:bg-[#D4AF37]/10 hover:border-[#D4AF37] shadow-lg";
+
+        const classes = `${baseClasses} ${primary ? primaryClasses : secondaryClasses}`;
+
+        const content = (
+          <React.Fragment>
+            <div className="flex items-center gap-5 z-10">
+                <span className={`w-6 h-6 transition-transform duration-500 group-hover:scale-110 ${primary ? 'text-black' : 'text-[#D4AF37]'}`}>
+                    {icon}
+                </span>
+                <div className="flex flex-col text-left">
+                    <span className={`font-display font-bold uppercase tracking-widest text-xs md:text-sm ${primary ? 'text-black' : 'text-gray-100'}`}>
+                        {text}
+                    </span>
+                    {subtext && (
+                        <span className={`text-[9px] md:text-[10px] font-semibold tracking-wide uppercase mt-1 ${primary ? 'text-black/70' : 'text-gray-500 group-hover:text-[#D4AF37]/80'}`}>
+                            {subtext}
+                        </span>
+                    )}
+                </div>
+            </div>
+            <div className="z-10 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-4 group-hover:translate-x-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={primary ? 'text-black' : 'text-[#D4AF37]'}>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </div>
+          </React.Fragment>
+        );
+
+        if (onClick) {
+          return (
+            <button onClick={onClick} className={classes}>
+              {content}
+            </button>
+          );
+        }
+
+        return (
+          <a href={url} target="_blank" rel="noopener noreferrer" className={classes}>
+            {content}
+          </a>
+        );
+      };
+
+      // --- AboutModal Component ---
+      const AboutModal = ({ isOpen, onClose }) => {
+        if (!isOpen) return null;
+
+        return (
+          <div 
+            className="fixed inset-0 bg-black/95 backdrop-blur-xl flex items-center justify-center z-50 p-4 transition-opacity duration-300"
+            onClick={onClose}
+            aria-modal="true"
+            role="dialog"
+          >
+            <div
+              className="relative w-full max-w-lg bg-[#0a0a0a] rounded-sm p-10 border border-[#D4AF37]/30 shadow-[0_0_80px_rgba(212,175,55,0.1)] animate-modal-in"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={onClose}
+                className="absolute top-4 right-4 text-gray-500 hover:text-[#D4AF37] transition-colors duration-200"
+                aria-label="Close modal"
+              >
+                <CloseIcon />
+              </button>
+
+              <div className="text-center mb-8">
+                  <h2 className="font-display text-3xl md:text-4xl font-black text-gold-gradient mb-4 uppercase tracking-tighter">
+                    GL IMPORTS
+                  </h2>
+                  <div className="h-0.5 w-16 bg-[#D4AF37] mx-auto"></div>
+              </div>
+              
+              <div className="space-y-6 text-gray-400 text-sm leading-7 font-medium text-justify font-display">
+                <p>
+                  A <strong className="text-[#D4AF37]">GL Imports</strong> redefine o conceito de exclusividade. Somos o ponto de encontro entre a alta tecnologia e o estilo de vida premium.
+                </p>
+                <p>
+                  Especialistas no ecossistema <strong className="text-white">Apple</strong>, entregamos inovação em suas mãos. Elevamos seus sentidos com a fidelidade sonora da <strong className="text-white">JBL</strong> e vestimos sua melhor versão com marcas de <strong className="text-white">Moda de Luxo</strong> como Lacoste.
+                </p>
+                <p>
+                  Não vendemos apenas produtos; entregamos status, confiança e uma experiência de compra incomparável.
+                </p>
+              </div>
+              
+              <div className="mt-10 flex justify-center">
+                  <button onClick={onClose} className="px-10 py-3 border border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37] hover:text-black transition-all duration-300 rounded-sm uppercase text-xs tracking-[0.2em] font-bold">
+                      Fechar
+                  </button>
+              </div>
+            </div>
+          </div>
+        );
+      };
+      
+      // --- Main App Component ---
+      const App = () => {
+        const [isLoading, setIsLoading] = useState(true);
+        const [isModalOpen, setIsModalOpen] = useState(false);
+        
+        const openModal = useCallback(() => setIsModalOpen(true), []);
+        const closeModal = useCallback(() => setIsModalOpen(false), []);
+
+        const handleLoadingFinish = useCallback(() => {
+           setIsLoading(false);
+        }, []);
+
+        return (
+          <React.Fragment>
+            {isLoading && <LoadingScreen onFinish={handleLoadingFinish} />}
+            
+            {!isLoading && (
+              <div className="min-h-screen w-full flex items-center justify-center p-4 py-8 md:py-12">
+                <div className="relative z-10 w-full max-w-md mx-auto animate-page-load">
+                  <main className="w-full luxury-glass rounded-sm p-6 md:p-8 flex flex-col gap-8 relative overflow-hidden shadow-2xl">
+                    
+                    {/* Decorative Elements */}
+                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent opacity-70"></div>
+                    <div className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent opacity-30"></div>
+
+                    <header className="flex flex-col items-center mt-2">
+                      <div className="logo-container mb-8 p-1 rounded-2xl shadow-[0_0_30px_rgba(212,175,55,0.3)]">
+                        <img 
+                          src="https://i.imgur.com/URVm5iR.jpeg" 
+                          alt="GL Imports Logo" 
+                          className="w-32 h-32 object-cover rounded-xl"
+                        />
+                      </div>
+                      <h1 className="font-display text-4xl md:text-5xl text-center text-gold-gradient tracking-tight font-black drop-shadow-lg uppercase">
+                        GL IMPORTS
+                      </h1>
+                      <div className="mt-4 flex flex-col items-center gap-1">
+                        <p className="text-gray-300 text-[10px] md:text-xs tracking-[0.25em] uppercase text-center font-bold">
+                          O Padrão Ouro em Tecnologia
+                        </p>
+                         <p className="text-[#D4AF37] text-[9px] md:text-[10px] tracking-[0.2em] uppercase text-center font-medium opacity-80">
+                          & Estilo Exclusivo
+                        </p>
+                      </div>
+                    </header>
+
+                    <div className="gold-divider opacity-30"></div>
+
+                    <section className="w-full flex flex-col gap-4">
+                      {mainLinks.map((link) => (
+                        <LinkButton 
+                          key={link.id} 
+                          text={link.text}
+                          subtext={link.subtext}
+                          url={link.url}
+                          icon={link.icon}
+                          primary={link.primary}
+                          onClick={link.id === 'about' ? openModal : undefined}
+                        />
+                      ))}
+                      
+                      {/* Instagram Button */}
+                      <a href="https://instagram.com/fernandobarbershopp" target="_blank" rel="noopener noreferrer" className="mt-2 group flex items-center justify-center gap-2 py-3 text-gray-500 hover:text-[#D4AF37] transition-all duration-300">
+                         <InstagramIcon className="w-4 h-4" />
+                         <span className="uppercase text-[10px] tracking-[0.2em] font-bold border-b border-transparent group-hover:border-[#D4AF37]">Siga no Instagram</span>
+                      </a>
+                    </section>
+
+                    <div className="gold-divider opacity-30"></div>
+
+                    <footer className="w-full flex flex-col items-center justify-center gap-4 text-center">
+                        <p className="text-[#D4AF37]/40 text-[9px] uppercase tracking-[0.3em]">
+                            Desde 2024
+                        </p>
+                    </footer>
+                  </main>
+                </div>
+
+                <AboutModal isOpen={isModalOpen} onClose={closeModal} />
+              </div>
+            )}
+          </React.Fragment>
+        );
+      };
+
+      // --- Mount React App ---
+      const rootElement = document.getElementById('root');
+      if (!rootElement) {
+        throw new Error("Could not find root element to mount to");
+      }
+
+      const root = ReactDOM.createRoot(rootElement);
+      root.render(<App />);
+
+    </script>
+</body>
+</html>
