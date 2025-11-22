@@ -144,13 +144,13 @@
       }
 
       /* 
-         Filter Black to Gold 
-         Invert: Black becomes White
-         Sepia: White becomes Sepia
-         Saturate: Boosts color
+         Filter Black to White/Gold 
+         Invert 100% = White
+         Sepia 50% = Adds warmth (Gold tint) but keeps it bright
+         Saturate = Boosts the gold
       */
       .filter-black-to-gold {
-        filter: invert(100%) sepia(100%) saturate(400%) hue-rotate(0deg) brightness(100%) contrast(100%);
+        filter: invert(100%) sepia(30%) saturate(300%) hue-rotate(5deg) brightness(100%) contrast(100%);
         transition: all 0.5s ease;
       }
 
@@ -199,7 +199,7 @@
     
     <!-- Watermark -->
     <div class="watermark-hypertech">
-      <a href="https://www.hyper-tech.online/" target="_blank" rel="noopener noreferrer">Designed by Hyper Tech</a>
+      <a href="https://www.hypertechal.com.br" target="_blank" rel="noopener noreferrer">Designed by Hyper Tech</a>
     </div>
     
     <!-- React Libraries -->
@@ -334,7 +334,7 @@
           id: 'whatsapp',
           text: 'Atendimento via Whatsapp',
           subtext: 'Fale diretamente com nossa equipe',
-          url: 'https://wa.me/5582982034411',
+          url: 'https://wa.me/5582988452628',
           icon: <WhatsAppIcon />,
           primary: true,
         },
@@ -348,7 +348,7 @@
           id: 'location',
           text: 'Nossa Localização',
           subtext: 'Visite nossa loja',
-          url: 'https://maps.app.goo.gl/2p5nXKmpCpZxAxbf7',
+          url: 'https://maps.app.goo.gl/nCUtRSPAtohrYDY47',
           icon: <MapPinIcon />,
         },
       ];
@@ -521,7 +521,7 @@
                       ))}
                       
                       {/* Instagram Button */}
-                      <a href="https://instagram.com/fernandobarbershopp" target="_blank" rel="noopener noreferrer" className="mt-2 group flex items-center justify-center gap-2 py-3 text-gray-500 hover:text-[#D4AF37] transition-all duration-300">
+                      <a href="https://www.instagram.com/gl_iimpoorts" target="_blank" rel="noopener noreferrer" className="mt-2 group flex items-center justify-center gap-2 py-3 text-gray-500 hover:text-[#D4AF37] transition-all duration-300">
                          <InstagramIcon className="w-4 h-4" />
                          <span className="uppercase text-[10px] tracking-[0.2em] font-bold border-b border-transparent group-hover:border-[#D4AF37]">Siga no Instagram</span>
                       </a>
