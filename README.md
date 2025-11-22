@@ -1,8 +1,8 @@
 # 💎 GL Imports - Premium Store | Link in Bio
 
-> **"O Padrão Ouro em Tecnologia & Estilo Exclusivo"**
+> **"O Padrão Ouro em Tecnologia & Games Exclusivos"**
 
-Bem-vindo ao repositório oficial da página "Link in Bio" da **GL Imports**. Este projeto foi desenvolvido para oferecer uma experiência digital de alto padrão, alinhada com a exclusividade dos produtos comercializados (iPhones, JBL, Lacoste, etc.).
+Bem-vindo ao repositório oficial da página "Link in Bio" da **GL Imports**. Este projeto foi desenvolvido para oferecer uma experiência digital de alto padrão, alinhada com a exclusividade dos produtos comercializados (iPhones, Xiaomi, PS5, JBL).
 
 O site funciona como um cartão de visita digital interativo, focado em conversão via WhatsApp e fortalecimento da marca.
 
@@ -15,7 +15,7 @@ O design foi meticulosamente trabalhado para transmitir luxo, sofisticação e m
 -   **Paleta de Cores:** `Black Piano` (#050505) como base, com acentos em `Gold Gradient` (#D4AF37) para evocar riqueza e exclusividade.
 -   **Tipografia:** Utilização da família **Montserrat**, uma fonte geométrica sans-serif que equilibra modernidade e legibilidade.
 -   **Glassmorphism:** Os cartões utilizam um efeito de vidro fosco (blur) com bordas douradas sutis, criando profundidade sobre o fundo texturizado.
--   **Loading Screen Exclusivo:** Uma introdução cinematográfica que apresenta as principais marcas (Apple, JBL, Lacoste) com efeitos de pulsação e filtros dourados antes de revelar o conteúdo principal.
+-   **Loading Screen Exclusivo:** Uma introdução cinematográfica que apresenta as principais marcas (Apple, JBL, Xiaomi) com efeitos de pulsação e filtros dourados antes de revelar o conteúdo principal.
 
 ---
 
@@ -23,7 +23,7 @@ O design foi meticulosamente trabalhado para transmitir luxo, sofisticação e m
 
 1.  **Preloader de Marcas:**
     -   Animação sequencial exibindo os logotipos das marcas parceiras.
-    -   Filtro CSS inteligente que converte logotipos pretos (PNG/SVG) em Branco/Dourado para contraste perfeito.
+    -   Filtro CSS inteligente que uniformiza logotipos de diferentes cores (Preto ou Laranja) para um padrão Branco/Dourado luxuoso.
     
 2.  **Links Inteligentes:**
     -   **WhatsApp (Principal):** Botão de destaque com gradiente dourado sólido para máxima conversão (CTA).

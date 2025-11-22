@@ -6,10 +6,10 @@
     <title>GL Imports | Premium Store</title>
     
     <!-- SEO & Link Preview Meta Tags -->
-    <meta name="description" content="GL Imports - Sua loja premium de iPhones, acessórios JBL e moda exclusiva. Qualidade e sofisticação." />
+    <meta name="description" content="GL Imports - Sua loja premium de iPhones, Xiaomi, PS5 e áudio JBL. Tecnologia e sofisticação." />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="GL Imports - Premium Store" />
-    <meta property="og:description" content="iPhones, JBL e Moda Premium. O melhor da tecnologia e estilo em um só lugar." />
+    <meta property="og:description" content="iPhones, Xiaomi, PS5 e JBL. O melhor da tecnologia premium em um só lugar." />
     <meta property="og:image" content="https://i.imgur.com/URVm5iR.jpeg" />
     
     <!-- Favicon -->
@@ -144,13 +144,13 @@
       }
 
       /* 
-         Filter Black to White/Gold 
-         Invert 100% = White
-         Sepia 50% = Adds warmth (Gold tint) but keeps it bright
-         Saturate = Boosts the gold
+         Filter Black/Color to White/Gold 
+         Grayscale 100% = Removes original colors (like Xiaomi Orange)
+         Invert 100% = Turns Black/Dark Grey to White
+         Sepia + Saturate = Adds Gold Tint
       */
       .filter-black-to-gold {
-        filter: invert(100%) sepia(30%) saturate(300%) hue-rotate(5deg) brightness(100%) contrast(100%);
+        filter: grayscale(100%) invert(100%) sepia(30%) saturate(300%) hue-rotate(5deg) brightness(100%) contrast(100%);
         transition: all 0.5s ease;
       }
 
@@ -269,9 +269,9 @@
             showText: false 
           },
           { 
-            id: 'lacoste', 
-            label: 'LACOSTE', 
-            src: 'https://i.imgur.com/qQWsf2S.png',
+            id: 'xiaomi', 
+            label: 'XIAOMI', 
+            src: 'https://upload.wikimedia.org/wikipedia/commons/a/a9/XiaomiLogoNew2.png',
             customClass: 'filter-black-to-gold',
             showText: false
           }
@@ -442,7 +442,7 @@
                   A <strong className="text-[#D4AF37]">GL Imports</strong> redefine o conceito de exclusividade. Somos o ponto de encontro entre a alta tecnologia e o estilo de vida premium.
                 </p>
                 <p>
-                  Especialistas no ecossistema <strong className="text-white">Apple</strong>, entregamos inovação em suas mãos. Elevamos seus sentidos com a fidelidade sonora da <strong className="text-white">JBL</strong> e vestimos sua melhor versão com marcas de <strong className="text-white">Moda de Luxo</strong> como Lacoste.
+                  Especialistas no ecossistema <strong className="text-white">Apple</strong>, entregamos inovação em suas mãos. Elevamos seus sentidos com a fidelidade sonora da <strong className="text-white">JBL</strong>, a potência dos consoles <strong className="text-white">PS5</strong> e a versatilidade dos smartphones <strong className="text-white">Xiaomi</strong>.
                 </p>
                 <p>
                   Não vendemos apenas produtos; entregamos status, confiança e uma experiência de compra incomparável.
@@ -500,7 +500,7 @@
                           O Padrão Ouro em Tecnologia
                         </p>
                          <p className="text-[#D4AF37] text-[9px] md:text-[10px] tracking-[0.2em] uppercase text-center font-medium opacity-80">
-                          & Estilo Exclusivo
+                          & Games Exclusivos
                         </p>
                       </div>
                     </header>
