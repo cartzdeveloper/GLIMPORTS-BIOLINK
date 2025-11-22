@@ -6,10 +6,10 @@
     <title>GL Imports | Premium Store</title>
     
     <!-- SEO & Link Preview Meta Tags -->
-    <meta name="description" content="GL Imports - Sua loja premium de iPhones, Xiaomi, PS5 e áudio JBL. Tecnologia e sofisticação." />
+    <meta name="description" content="GL Imports - iPhones, Xiaomi, PS5, JBL e Assistência Técnica Apple Especializada. Tecnologia e sofisticação." />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="GL Imports - Premium Store" />
-    <meta property="og:description" content="iPhones, Xiaomi, PS5 e JBL. O melhor da tecnologia premium em um só lugar." />
+    <meta property="og:description" content="iPhones, Xiaomi, PS5, JBL e Assistência Técnica Especializada. O melhor da tecnologia premium." />
     <meta property="og:image" content="https://i.imgur.com/URVm5iR.jpeg" />
     
     <!-- Favicon -->
@@ -248,6 +248,12 @@
         </svg>
       );
 
+      const WrenchIcon = ({ className }) => (
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className={className}>
+          <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+        </svg>
+      );
+
       // --- Loading Screen Component ---
       const LoadingScreen = ({ onFinish }) => {
         const [stage, setStage] = useState(0);
@@ -332,11 +338,18 @@
       const mainLinks = [
         {
           id: 'whatsapp',
-          text: 'Atendimento via Whatsapp',
+          text: 'Atendimento & Vendas',
           subtext: 'Fale diretamente com nossa equipe',
           url: 'https://wa.me/5582988452628',
           icon: <WhatsAppIcon />,
           primary: true,
+        },
+        {
+          id: 'support',
+          text: 'Assistência Técnica Apple',
+          subtext: 'Reparos Especializados em iPhone',
+          url: 'https://wa.me/5582988452628?text=Ol%C3%A1%2C%20preciso%20de%20informa%C3%A7%C3%B5es%20sobre%20assist%C3%AAncia%20t%C3%A9cnica.',
+          icon: <WrenchIcon />,
         },
         {
           id: 'about',
@@ -442,10 +455,10 @@
                   A <strong className="text-[#D4AF37]">GL Imports</strong> redefine o conceito de exclusividade. Somos o ponto de encontro entre a alta tecnologia e o estilo de vida premium.
                 </p>
                 <p>
-                  Especialistas no ecossistema <strong className="text-white">Apple</strong>, entregamos inovação em suas mãos. Elevamos seus sentidos com a fidelidade sonora da <strong className="text-white">JBL</strong>, a potência dos consoles <strong className="text-white">PS5</strong> e a versatilidade dos smartphones <strong className="text-white">Xiaomi</strong>.
+                  Especialistas no ecossistema <strong className="text-white">Apple</strong>, somos referência em venda e <strong className="text-[#D4AF37]">assistência técnica especializada</strong> para iPhones. Entregamos inovação em suas mãos, elevando seus sentidos com a fidelidade sonora da <strong className="text-white">JBL</strong>, a potência dos consoles <strong className="text-white">PS5</strong> e a versatilidade dos smartphones <strong className="text-white">Xiaomi</strong>.
                 </p>
                 <p>
-                  Não vendemos apenas produtos; entregamos status, confiança e uma experiência de compra incomparável.
+                  Não vendemos apenas produtos; entregamos solução, status, confiança e uma experiência de compra incomparável.
                 </p>
               </div>
               
@@ -531,7 +544,7 @@
 
                     <footer className="w-full flex flex-col items-center justify-center gap-4 text-center">
                         <p className="text-[#D4AF37]/40 text-[9px] uppercase tracking-[0.3em]">
-                            Desde 2024
+                            Desde 2021
                         </p>
                     </footer>
                   </main>
